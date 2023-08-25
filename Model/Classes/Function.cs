@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model.Classes
 {
-    public abstract class Function
+    public class Function
     {
         public string NameFunction { get; set; }
 
