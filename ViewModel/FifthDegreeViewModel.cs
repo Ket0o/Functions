@@ -8,10 +8,19 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
+    /// <summary>
+    /// ViewModel для FifthDegree.
+    /// </summary>
     public class FifthDegreeViewModel : FunctionViewModel
     {
-        readonly FifthDegree fifthDegree = new();
+        /// <summary>
+        /// Функция пятой степени.
+        /// </summary>
+        public FifthDegree FifthDegree { get; } = new();
 
+        /// <summary>
+        /// Возвращает и задает значение функции.
+        /// </summary>
         public override double ValueFunction
         {
             get => CoefficientA * Math.Pow(CoefficientX,
@@ -19,16 +28,25 @@ namespace ViewModel
                 (double)Functions.FourthDegree) + CoefficientC;
         }
 
-        public new string NameFunction
+        /// <summary>
+        /// Возвращает и задает имя функции.
+        /// </summary>
+        public string NameFunction
         {
-            get => fifthDegree.NameFunction;
+            get => FifthDegree.NameFunction;
         }
 
+        /// <summary>
+        /// Возвращает и задает список коэффициента C.
+        /// </summary>
         public override int[] TypeCoefficientC
         {
-            get => fifthDegree.TypeCoefficientC;
+            get => FifthDegree.TypeCoefficientC;
         }
 
+        /// <summary>
+        /// Создает экземпляр класса <see cref="FifthDegreeViewModel"/>.
+        /// </summary>
         public FifthDegreeViewModel()
         {
 

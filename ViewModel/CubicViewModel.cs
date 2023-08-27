@@ -8,10 +8,19 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
+    /// <summary>
+    /// ViewModel для Cubic.
+    /// </summary>
     public class CubicViewModel : FunctionViewModel
     {
-        readonly Cubic qubic = new();
+        /// <summary>
+        /// Кубическая функция.
+        /// </summary>
+        public Cubic Qubic { get; } = new();
 
+        /// <summary>
+        /// Возвращает и задает значение функции.
+        /// </summary>
         public override double ValueFunction
         {
             get => CoefficientA * Math.Pow(CoefficientX,
@@ -19,16 +28,25 @@ namespace ViewModel
                 (double)Functions.Quadratic) + CoefficientC;
         }
 
-        public new string NameFunction
+        /// <summary>
+        /// Возвращает и задает имя функции.
+        /// </summary>
+        public string NameFunction
         {
-            get => qubic.NameFunction;
+            get => Qubic.NameFunction;
         }
 
+        /// <summary>
+        /// Возвращает и задает список коэффициента C.
+        /// </summary>
         public override int[] TypeCoefficientC
         {
-            get => qubic.TypeCoefficientC;
+            get => Qubic.TypeCoefficientC;
         }
 
+        /// <summary>
+        /// Создает экземпляр класса <see cref="CubicViewModel"/>.
+        /// </summary>
         public CubicViewModel()
         {
 

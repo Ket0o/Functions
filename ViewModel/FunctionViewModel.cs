@@ -8,83 +8,100 @@ using Model.Classes;
 
 namespace ViewModel
 {
+    /// <summary>
+    /// ViewModel для Function.
+    /// </summary>
     public class FunctionViewModel: ObservableObject
     {
-        readonly Function function = new();
+        /// <summary>
+        /// Функция.
+        /// </summary>
+        public Function Function { get; } = new();
 
-        public string NameFunction
-        {
-            get => function.NameFunction;
-        }
-
+        /// <summary>
+        /// Возвращает и задает коэффициент A.
+        /// </summary>
         public double CoefficientA
         {
-            get => function.CoefficientA;
+            get => Function.CoefficientA;
             set
             {
-                function.CoefficientA = value;
+                Function.CoefficientA = value;
                 OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает коэффициент B.
+        /// </summary>
         public double CoefficientB
         {
-            get => function.CoefficientB;
+            get => Function.CoefficientB;
             set
             {
-                function.CoefficientB = value;
+                Function.CoefficientB = value;
                 OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает коэффициент X.
+        /// </summary>
         public double CoefficientX
         {
-            get => function.CoefficientX;
+            get => Function.CoefficientX;
             set
             {
-                function.CoefficientX = value;
+                Function.CoefficientX = value;
                 OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает коэффициент Y.
+        /// </summary>
         public double CoefficientY
         {
-            get => function.CoefficientY;
+            get => Function.CoefficientY;
             set
             {
-                function.CoefficientY = value;
+                Function.CoefficientY = value;
                 OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает коэффициент C.
+        /// </summary>
         public int CoefficientC
         {
-            get => function.CoefficientC;
+            get => Function.CoefficientC;
             set
             {
-                function.CoefficientC = value;
+                Function.CoefficientC = value;
                 OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает список коэффициента C.
+        /// </summary>
         public virtual int[] TypeCoefficientC
         {
-            get => function.TypeCoefficientC;
+            get => Function.TypeCoefficientC;
         }
 
+        /// <summary>
+        /// Возвращает и задает значение функции.
+        /// </summary>
         public virtual double ValueFunction
         {
-            get => function.ValueFunction;
-        }
-
-        public FunctionViewModel()
-        {
-
+            get => Function.ValueFunction;
         }
     }
 }

@@ -8,22 +8,45 @@ using System.Linq;
 
 namespace ViewModel
 {
+    /// <summary>
+    /// ViewModel для главного окна.
+    /// </summary>
     public partial class MainViewModel : ObservableObject
     {
+        /// <summary>
+        /// Список, заполненный элементами: «линейная», «квадратичная», «кубическая», 
+        /// «4-ой степени», «5-ой степени».
+        /// </summary>
         [ObservableProperty]
         private string[] _functionsName = Enum.GetNames(typeof(Functions));
 
+        /// <summary>
+        /// Свойство для блокировки элементов пользовательского интерфейса.
+        /// </summary>
         [ObservableProperty]
         private bool _isEnabled = false;
 
+        /// <summary>
+        /// Коллекция функций.
+        /// </summary>
         [ObservableProperty]
         private ObservableCollection<FunctionViewModel> _allFunctions = 
             new ObservableCollection<FunctionViewModel>();
 
+        /// <summary>
+        /// Выбранное название функции из списка.
+        /// </summary>
         private string _functionName;
 
+        /// <summary>
+        /// Выбранная функция.
+        /// </summary>
+        [ObservableProperty]
         private FunctionViewModel _selectedFunсtion;
 
+        /// <summary>
+        /// Логика команды <see cref="AddFunctionCommand"/>.
+        /// </summary>
         [RelayCommand]
         private void AddFunction()
         {
@@ -37,6 +60,9 @@ namespace ViewModel
             }
         }
 
+        /// <summary>
+        /// Возвращает и задает выбранное название функции из списка.
+        /// </summary>
         public string FunctionName
         {
             get => _functionName;
@@ -70,19 +96,7 @@ namespace ViewModel
                 else 
                 {
                     SelectedFunсtion = null;
-                    //IsEnabled = false;
-                    // TODO: залочить все кнопки и боксы и тоже самое с выбранной функцией 
                 }
-                OnPropertyChanged();
-            }
-        }
-
-        public FunctionViewModel SelectedFunсtion
-        {
-            get => _selectedFunсtion;
-            set
-            {
-                _selectedFunсtion = value;
                 OnPropertyChanged();
             }
         }

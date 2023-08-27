@@ -8,10 +8,19 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
+    /// <summary>
+    /// ViewModel для FourthDegree.
+    /// </summary>
     public class FourthDegreeViewModel : FunctionViewModel
     {
-        readonly FourthDegree fourthDegree = new();
+        /// <summary>
+        /// Функция четвертой степени.
+        /// </summary>
+        public FourthDegree FourthDegree { get; } = new();
 
+        /// <summary>
+        /// Возвращает и задает значение функции.
+        /// </summary>
         public override double ValueFunction
         {
             get => CoefficientA * Math.Pow(CoefficientX,
@@ -19,16 +28,25 @@ namespace ViewModel
                 (double)Functions.Cubic) + CoefficientC;
         }
 
-        public new string NameFunction
+        /// <summary>
+        /// Возвращает и задает имя функции.
+        /// </summary>
+        public string NameFunction
         {
-            get => fourthDegree.NameFunction;
+            get => FourthDegree.NameFunction;
         }
 
+        /// <summary>
+        /// Возвращает и задает список коэффициента C.
+        /// </summary>
         public override int[] TypeCoefficientC
         {
-            get => fourthDegree.TypeCoefficientC;
+            get => FourthDegree.TypeCoefficientC;
         }
 
+        /// <summary>
+        /// Создает экземпляр класса <see cref="FourthDegreeViewModel"/>.
+        /// </summary>
         public FourthDegreeViewModel()
         {
 
