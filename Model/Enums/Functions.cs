@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model.Enums
 {
+    /// <summary>
+    /// Хранит перечисление о названиях функций.
+    /// </summary>
     public enum Functions
     {
         Linear = 1,

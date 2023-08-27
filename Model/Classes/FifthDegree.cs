@@ -7,14 +7,19 @@ using Model.Enums;
 
 namespace Model.Classes
 {
+    /// <summary>
+    /// Хранит данные о функции 5-ой степени.
+    /// </summary>
     public class FifthDegree : Function
     {
-        public override double ValueFunction => CoefficientA * Math.Pow(CoefficientX, 
-            (double)Functions.FifthDegree) + CoefficientB * Math.Pow(CoefficientY, 
-                (double)Functions.FourthDegree) + CoefficientC;
-
+        /// <summary>
+        /// Возвращает и задает список коэффициента C для функции 5-ой степени.
+        /// </summary>
         public override int[] TypeCoefficientC => new int[5] { 10000, 20000, 30000, 40000, 50000 };
 
+        /// <summary>
+        /// Создает экземпляр класса <see cref="FifthDegree"/>.
+        /// </summary>
         public FifthDegree() 
         {
             NameFunction = Functions.FifthDegree.ToString();
