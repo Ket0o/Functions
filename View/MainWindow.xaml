@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:View"
         xmlns:viewModel="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="450">
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="450" 
+        Icon="/Resources/Function_128x128.ico">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
