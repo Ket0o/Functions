@@ -14,6 +14,9 @@ namespace ViewModel
         private string[] _functionsName = Enum.GetNames(typeof(Functions));
 
         [ObservableProperty]
+        private bool _isEnabled = false;
+
+        [ObservableProperty]
         private ObservableCollection<FunctionViewModel> _allFunctions = 
             new ObservableCollection<FunctionViewModel>();
 
@@ -24,7 +27,14 @@ namespace ViewModel
         [RelayCommand]
         private void AddFunction()
         {
-            AllFunctions.Add(SelectedFunñtion);
+            if (!AllFunctions.Contains(SelectedFunñtion))
+            {
+                AllFunctions.Add(SelectedFunñtion);
+            }
+            else
+            {
+                IsEnabled = false;
+            }
         }
 
         public string FunctionName
@@ -35,6 +45,7 @@ namespace ViewModel
                 _functionName = value;
                 if (_functionName != null)
                 {
+                    IsEnabled = true;
                     if (_functionName == Functions.Linear.ToString())
                     {
                         SelectedFunñtion = new LinearViewModel();
@@ -47,9 +58,19 @@ namespace ViewModel
                     {
                         SelectedFunñtion= new CubicViewModel();
                     }
+                    else if (_functionName == Functions.FourthDegree.ToString())
+                    {
+                        SelectedFunñtion = new FourthDegreeViewModel();
+                    }
+                    else if (_functionName == Functions.FifthDegree.ToString())
+                    {
+                        SelectedFunñtion = new FifthDegreeViewModel();
+                    }
                 }
-                else
+                else 
                 {
+                    SelectedFunñtion = null;
+                    //IsEnabled = false;
                     // TODO: çàëî÷èòü âñå êíîïêè è áîêñû è òîæå ñàìîå ñ âûáðàííîé ôóíêöèåé 
                 }
                 OnPropertyChanged();

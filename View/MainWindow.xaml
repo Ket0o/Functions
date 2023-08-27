@@ -22,7 +22,6 @@
             </Grid.RowDefinitions>
             <ListBox Grid.Row="0" 
                      Margin="3"
-                     IsEnabled="True"
                      x:Name="ListBox"
                      ItemsSource="{Binding FunctionsName, UpdateSourceTrigger=PropertyChanged}"
                      SelectedItem="{Binding FunctionName, 
@@ -30,7 +29,8 @@
             </ListBox>
             <Button Grid.Row="1" Margin="3" 
                     Height="25" Content="Add"
-                    Command="{Binding AddFunctionCommand, UpdateSourceTrigger=PropertyChanged}"/>
+                    Command="{Binding AddFunctionCommand, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{Binding IsEnabled}"/>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -46,17 +46,23 @@
                     <TextBlock Text="Coefficient a" Margin="3"/>
                     <TextBox Margin="3"
                              Text="{Binding SelectedFunсtion.CoefficientA, 
-                        UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                        UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                             IsEnabled="{Binding IsEnabled}"
+                             PreviewTextInput="OnlyNumbersValidation"/>
                     <TextBlock Text="Coefficient c" Margin="3"/>
                     <ComboBox ItemsSource="{Binding SelectedFunсtion.TypeCoefficientC, 
                         UpdateSourceTrigger=PropertyChanged}" Margin="3"
                               SelectedItem="{Binding SelectedFunсtion.CoefficientC, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                              IsEnabled="{Binding IsEnabled}"
+                              PreviewTextInput="OnlyNumbersValidation"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="3">
                     <TextBlock Text="Coefficient b" Margin="3"/>
                     <TextBox Text="{Binding SelectedFunсtion.CoefficientB, 
-                        UpdateSourceTrigger=PropertyChanged}" Margin="3"/>
+                        UpdateSourceTrigger=PropertyChanged}" Margin="3"
+                             IsEnabled="{Binding IsEnabled}"
+                             PreviewTextInput="OnlyNumbersValidation"/>
                 </StackPanel>
             </Grid>
             <DataGrid Grid.Row="1" Margin="6,6,6,3" ItemsSource="{Binding AllFunctions, 
@@ -66,7 +72,9 @@
                       ColumnWidth="Auto" CanUserResizeColumns="False" 
                       HeadersVisibility="Column" AutoGenerateColumns="False"
                       HorizontalAlignment="Stretch" CanUserAddRows="False" 
-                      CanUserResizeRows="False" MinRowHeight="20">
+                      CanUserResizeRows="False" MinRowHeight="20"
+                      IsEnabled="{Binding IsEnabled}" 
+                      PreviewTextInput="OnlyNumbersValidation">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding ValueFunction}" Header="f(x, y)" 
                                         IsReadOnly="True"/>
