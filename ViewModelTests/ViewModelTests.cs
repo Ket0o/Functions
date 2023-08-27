@@ -15,8 +15,10 @@ namespace ViewModelTests
 
             // act
             LinearViewModel linearViewModel = new();
-            linearViewModel.CoefficientA = linearViewModel.CoefficientB =
-                linearViewModel.CoefficientX = linearViewModel.CoefficientY = x;
+            linearViewModel.CoefficientA = 
+                linearViewModel.CoefficientB =
+                linearViewModel.CoefficientX = 
+                linearViewModel.CoefficientY = x;
             linearViewModel.CoefficientC = c;
             double actual = linearViewModel.ValueFunction;
 
@@ -34,8 +36,10 @@ namespace ViewModelTests
 
             // act
             QuadraticViewModel quadraticViewModel = new();
-            quadraticViewModel.CoefficientA = quadraticViewModel.CoefficientB =
-                quadraticViewModel.CoefficientX = quadraticViewModel.CoefficientY = x;
+            quadraticViewModel.CoefficientA = 
+                quadraticViewModel.CoefficientB =
+                quadraticViewModel.CoefficientX = 
+                quadraticViewModel.CoefficientY = x;
             quadraticViewModel.CoefficientC = c;
             double actual = quadraticViewModel.ValueFunction;
 
@@ -53,8 +57,10 @@ namespace ViewModelTests
 
             // act
             CubicViewModel cubicViewModel = new();
-            cubicViewModel.CoefficientA = cubicViewModel.CoefficientB =
-                cubicViewModel.CoefficientX = cubicViewModel.CoefficientY = x;
+            cubicViewModel.CoefficientA = 
+                cubicViewModel.CoefficientB =
+                cubicViewModel.CoefficientX = 
+                cubicViewModel.CoefficientY = x;
             cubicViewModel.CoefficientC = c;
             double actual = cubicViewModel.ValueFunction;
 
@@ -72,8 +78,10 @@ namespace ViewModelTests
 
             // act
             FourthDegreeViewModel fourthDegreeViewModel = new();
-            fourthDegreeViewModel.CoefficientA = fourthDegreeViewModel.CoefficientB =
-                fourthDegreeViewModel.CoefficientX = fourthDegreeViewModel.CoefficientY = x;
+            fourthDegreeViewModel.CoefficientA = 
+                fourthDegreeViewModel.CoefficientB =
+                fourthDegreeViewModel.CoefficientX = 
+                fourthDegreeViewModel.CoefficientY = x;
             fourthDegreeViewModel.CoefficientC = c;
             double actual = fourthDegreeViewModel.ValueFunction;
 
@@ -91,8 +99,10 @@ namespace ViewModelTests
 
             // act
             FifthDegreeViewModel fifthDegreeViewModel = new();
-            fifthDegreeViewModel.CoefficientA = fifthDegreeViewModel.CoefficientB =
-                fifthDegreeViewModel.CoefficientX = fifthDegreeViewModel.CoefficientY = x;
+            fifthDegreeViewModel.CoefficientA = 
+                fifthDegreeViewModel.CoefficientB =
+                fifthDegreeViewModel.CoefficientX = 
+                fifthDegreeViewModel.CoefficientY = x;
             fifthDegreeViewModel.CoefficientC = c;
             double actual = fifthDegreeViewModel.ValueFunction;
 

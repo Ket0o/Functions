@@ -56,15 +56,22 @@ namespace Model.Classes
         /// </summary>
         public double ValueFunction
         {
-            get { return _valueFunction; }
+            get 
+            { 
+                return _valueFunction; 
+            }
         }
 
         /// <summary>
-        /// Возвращает и задает список коэффициента C для каждого типа функции.
+        /// Возвращает и задает список коэффициента C 
+        /// для каждого типа функции.
         /// </summary>
         public virtual int[] TypeCoefficientC
         {
-            get { return _typeCoefficientC; }
+            get 
+            { 
+                return _typeCoefficientC; 
+            }
         }
 
         /// <summary>

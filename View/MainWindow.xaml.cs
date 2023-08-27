@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml.
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -26,7 +26,8 @@ namespace View
             InitializeComponent();
         }
 
-        private void OnlyNumbersValidation(object sender, TextCompositionEventArgs e)
+        private void OnlyNumbersValidation(object sender, 
+            TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[0-9]");
             e.Handled = !regex.IsMatch(e.Text);

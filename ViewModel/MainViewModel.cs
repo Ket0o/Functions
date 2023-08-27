@@ -14,8 +14,8 @@ namespace ViewModel
     public partial class MainViewModel : ObservableObject
     {
         /// <summary>
-        /// Список, заполненный элементами: «линейная», «квадратичная», «кубическая», 
-        /// «4-ой степени», «5-ой степени».
+        /// Список, заполненный элементами: «линейная», «квадратичная», 
+        /// «кубическая», «4-ой степени», «5-ой степени».
         /// </summary>
         [ObservableProperty]
         private string[] _functionsName = Enum.GetNames(typeof(Functions));
@@ -84,11 +84,13 @@ namespace ViewModel
                     {
                         SelectedFunсtion= new CubicViewModel();
                     }
-                    else if (_functionName == Functions.FourthDegree.ToString())
+                    else if (_functionName == 
+                        Functions.FourthDegree.ToString())
                     {
                         SelectedFunсtion = new FourthDegreeViewModel();
                     }
-                    else if (_functionName == Functions.FifthDegree.ToString())
+                    else if (_functionName == 
+                        Functions.FifthDegree.ToString())
                     {
                         SelectedFunсtion = new FifthDegreeViewModel();
                     }

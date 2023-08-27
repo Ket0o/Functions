@@ -13,9 +13,13 @@ namespace Model.Classes
     public class Quadratic : Function
     {
         /// <summary>
-        /// Возвращает и задает список коэффициента C для квадратичной функции.
+        /// Возвращает и задает список коэффициента C 
+        /// для квадратичной функции.
         /// </summary>
-        public override int[] TypeCoefficientC => new int[5] { 10, 20, 30, 40, 50 };
+        public override int[] TypeCoefficientC => new int[5] 
+        { 
+            10, 20, 30, 40, 50 
+        };
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Quadratic"/>.
