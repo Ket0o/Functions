@@ -17,7 +17,10 @@ namespace Model.Classes
         /// </summary>
         public override int[] TypeCoefficientC 
         { 
-            get => new int[5] {1, 2, 3, 4, 5};
+            get => new int[5] 
+            {
+                1, 2, 3, 4, 5
+            };
         }
 
         /// <summary>

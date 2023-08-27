@@ -24,8 +24,9 @@ namespace ViewModel
         public override double ValueFunction
         {
             get => CoefficientA * Math.Pow(CoefficientX,
-            (double)Functions.FifthDegree) + CoefficientB * Math.Pow(CoefficientY, 
-                (double)Functions.FourthDegree) + CoefficientC;
+            (double)Functions.FifthDegree) + CoefficientB * 
+                Math.Pow(CoefficientY, (double)Functions.FourthDegree) + 
+                CoefficientC;
         }
 
         /// <summary>

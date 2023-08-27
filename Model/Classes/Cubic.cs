@@ -15,7 +15,10 @@ namespace Model.Classes
         /// <summary>
         /// Возвращает и задает список коэффициента C для кубической функции.
         /// </summary>
-        public override int[] TypeCoefficientC => new int[5] { 100, 200, 300, 400, 500 };
+        public override int[] TypeCoefficientC => new int[5] 
+        {
+            100, 200, 300, 400, 500 
+        };
 
         /// <summary>
         /// Создает экземпляр класса <see cref="Cubic"/>.
