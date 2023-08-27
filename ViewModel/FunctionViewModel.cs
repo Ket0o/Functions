@@ -10,16 +10,11 @@ namespace ViewModel
 {
     public class FunctionViewModel: ObservableObject
     {
-        Function function = new();
-        
+        readonly Function function = new();
+
         public string NameFunction
         {
             get => function.NameFunction;
-            set
-            {
-                function.NameFunction = value;
-                OnPropertyChanged();
-            }
         }
 
         public double CoefficientA
@@ -28,6 +23,7 @@ namespace ViewModel
             set
             {
                 function.CoefficientA = value;
+                OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
@@ -38,6 +34,7 @@ namespace ViewModel
             set
             {
                 function.CoefficientB = value;
+                OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
@@ -47,7 +44,8 @@ namespace ViewModel
             get => function.CoefficientX;
             set
             {
-                function.CoefficientX = value; 
+                function.CoefficientX = value;
+                OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
@@ -58,6 +56,7 @@ namespace ViewModel
             set
             {
                 function.CoefficientY = value;
+                OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
@@ -68,13 +67,19 @@ namespace ViewModel
             set
             {
                 function.CoefficientC = value;
+                OnPropertyChanged(nameof(ValueFunction));
                 OnPropertyChanged();
             }
         }
 
-        public int[] TypeCoefficientC
+        public virtual int[] TypeCoefficientC
         {
             get => function.TypeCoefficientC;
+        }
+
+        public virtual double ValueFunction
+        {
+            get => function.ValueFunction;
         }
 
         public FunctionViewModel()

@@ -9,8 +9,8 @@ namespace Model.Classes
 {
     public class Quadratic : Function
     {
-        public override double ValueFunction => CoefficientA * Math.Pow(CoefficientX, 
-            (double)Functions.Quadratic) + CoefficientB * CoefficientY + CoefficientC;
+        //public override double ValueFunction => CoefficientA * Math.Pow(CoefficientX, 
+        //    (double)Functions.Quadratic) + CoefficientB * CoefficientY + CoefficientC;
 
         public override int[] TypeCoefficientC => new int[5] { 10, 20, 30, 40, 50 };
 

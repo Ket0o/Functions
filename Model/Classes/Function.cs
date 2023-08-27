@@ -24,7 +24,7 @@ namespace Model.Classes
         public int CoefficientC { get; set; }
 
         private int[] _typeCoefficientC;
-        public virtual double ValueFunction
+        public double ValueFunction
         {
             get { return _valueFunction; }
         }

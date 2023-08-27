@@ -9,9 +9,6 @@ namespace Model.Classes
 {
     public class Linear: Function
     {
-        public override double ValueFunction => CoefficientA * CoefficientX 
-            + CoefficientB + CoefficientC;
-
         public override int[] TypeCoefficientC 
         { 
             get => new int[5] {1, 2, 3, 4, 5};

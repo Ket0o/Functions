@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
+        xmlns:viewModel="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="450">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -19,10 +23,14 @@
             <ListBox Grid.Row="0" 
                      Margin="3"
                      IsEnabled="True"
-                     x:Name="ListBox">
+                     x:Name="ListBox"
+                     ItemsSource="{Binding FunctionsName, UpdateSourceTrigger=PropertyChanged}"
+                     SelectedItem="{Binding FunctionName, 
+                UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
             </ListBox>
             <Button Grid.Row="1" Margin="3" 
-                    Height="25" Content="Add"/>
+                    Height="25" Content="Add"
+                    Command="{Binding AddFunctionCommand, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -36,20 +44,39 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="3">
                     <TextBlock Text="Coefficient a" Margin="3"/>
-                    <TextBox Margin="3"/>
+                    <TextBox Margin="3"
+                             Text="{Binding SelectedFunсtion.CoefficientA, 
+                        UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     <TextBlock Text="Coefficient c" Margin="3"/>
-                    <ComboBox Margin="3"/>
+                    <ComboBox ItemsSource="{Binding SelectedFunсtion.TypeCoefficientC, 
+                        UpdateSourceTrigger=PropertyChanged}" Margin="3"
+                              SelectedItem="{Binding SelectedFunсtion.CoefficientC, 
+                        UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="3">
                     <TextBlock Text="Coefficient b" Margin="3"/>
-                    <TextBox Margin="3"/>
+                    <TextBox Text="{Binding SelectedFunсtion.CoefficientB, 
+                        UpdateSourceTrigger=PropertyChanged}" Margin="3"/>
                 </StackPanel>
             </Grid>
-            <DataGrid Grid.Row="1" Margin="6,6,6,3">
+            <DataGrid Grid.Row="1" Margin="6,6,6,3" ItemsSource="{Binding AllFunctions, 
+                UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                      SelectedItem="{Binding SelectedFunсtion, 
+                UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                      ColumnWidth="Auto" CanUserResizeColumns="False" 
+                      HeadersVisibility="Column" AutoGenerateColumns="False"
+                      HorizontalAlignment="Stretch" CanUserAddRows="False" 
+                      CanUserResizeRows="False" MinRowHeight="20">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="f(x, y)"/>
-                    <DataGridTextColumn Header="CoefficientX"/>
-                    <DataGridTextColumn Header="CoefficientY"/>
+                    <DataGridTextColumn Binding="{Binding ValueFunction}" Header="f(x, y)" 
+                                        IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding CoefficientX, 
+                        UpdateSourceTrigger=PropertyChanged}" Header="CoefficientX"/>
+                    <DataGridTextColumn Binding="{Binding CoefficientY, 
+                        UpdateSourceTrigger=PropertyChanged}" Header="CoefficientY"/>
+                    <DataGridTextColumn Binding="{Binding NameFunction, 
+                        UpdateSourceTrigger=PropertyChanged}" 
+                                        Header="NameFunction" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

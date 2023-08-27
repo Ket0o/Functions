@@ -1,4 +1,5 @@
 ﻿using Model.Classes;
+using Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,27 @@ namespace ViewModel
 {
     public class LinearViewModel: FunctionViewModel
     {
-        Linear linear = new();
+        readonly Linear linear = new();
 
-        public double ValueFunction
+        public override double ValueFunction
         {
-            get => linear.ValueFunction;
+            get => CoefficientA * CoefficientX
+            + CoefficientB + CoefficientC;
         }
 
-        public int[] TypeCoefficientC
+        public new string NameFunction 
+        { 
+            get => linear.NameFunction;
+        }
+
+        public override int[] TypeCoefficientC
         {
             get => linear.TypeCoefficientC;
         }
 
-        public LinearViewModel() { }
+        public LinearViewModel() 
+        {
+ 
+        }
     }
 }
