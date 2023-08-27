@@ -39,6 +39,6 @@
 - Функционал расчёта формул покрыт Unit-тестами.
 - Классы, публичные поля, методы, свойства имеют <summary> комментарии.
 - Программный код должен быть оформлен по одному из общепринятых соглашений по
-оформлению кода. Например, https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-
-guide/inside-a-program/coding-conventions.
+оформлению кода. Например, [https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-
+guide/inside-a-program/coding-conventions.](https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/coding-style/coding-conventions)https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/coding-style/coding-conventions
 - Код выложен на https://github.com/
